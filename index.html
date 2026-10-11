@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Prometheus Effort</title>
+<meta name="description" content="The Prometheus Effort is BBMS's student-run research, publication, and think-tank institution.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="loader" id="loader" aria-live="polite">
+  <picture class="loader__media">
+    <source media="(max-width: 820px), (orientation: landscape) and (max-height: 600px)" srcset="assets/bg-load.png">
+    <img class="loader__image" src="assets/Loader.png" alt="">
+  </picture>
+  <span class="loader__percent" id="loaderPercent">0%</span>
+</div>
+<button class="sound-toggle" id="soundToggle" type="button" aria-label="Turn ambient sound on" aria-pressed="false">
+  <svg class="sound-toggle__icon sound-toggle__icon--on" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9v6h4l5 4V5L8 9H4Z"></path>
+    <path d="M16 9.5a4 4 0 0 1 0 5M18.5 7a7.5 7.5 0 0 1 0 10"></path>
+  </svg>
+  <svg class="sound-toggle__icon sound-toggle__icon--off" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9v6h4l5 4V5L8 9H4Z"></path>
+    <path d="m17 9 4 6m0-6-4 6"></path>
+  </svg>
+</button>
+<audio id="backgroundMusic" src="assets/bg.mp3" loop autoplay preload="auto"></audio>
+<div class="grid" id="grid" aria-hidden="true"></div>
+
+<button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+<nav class="nav" aria-label="Main">
+  <button type="button" data-target="hero" class="is-active">HOME</button>
+  <button type="button" data-target="about">ABOUT</button>
+  <button type="button" data-target="departments">DEPT</button>
+  <button type="button" data-target="contact">CONTACT</button>
+</nav>
+
+<main>
+  <section class="sec hero" id="hero">
+    <h1 class="hero__title" id="heroTitle">
+      <span class="l1">PRO<lmao style="z-index: 1000 !important;">ME</lmao>THE<b>US</b></span>
+      <span class="l2"><b>EF</b><lmao style="z-index: 1000 !important;">FOR</lmao>T</span>
+    </h1>
+    <img class="hero__hand" id="heroHand" src="assets/hero-hand.webp" alt="A hand holding a glowing infinity ribbon">
+    <img class="hero__line" src="assets/line.png" alt="" aria-hidden="true" style="z-index: 100 !important;">
+  </section>
+
+  <section class="sec about" id="about">
+    <img class="about__title" src="assets/about.png" alt="About us">
+    <div class="about__text">
+      <p><em class="brand">The Prometheus Effort</em>, is BBMS&rsquo;s student-run research, publication, and think-tank institution.</p>
+      <p>We centralise research across <u>Scientific, Commercial, Humanities, and IT disciplines,</u> publish original student work through a formal editorial process, and run think-tank sessions like debates and roundtables, <u>all built to develop evidence-driven student researchers and leave a legacy that outlasts any single graduating class.</u></p>
+    </div>
+  </section>
+
+  <section class="sec depts" id="departments">
+    <h2 class="depts__title">DE<b>PART</b>MENTS</h2>
+    <div class="scroller" id="scroller" tabindex="0" aria-label="Departments, scrolling list">
+      <div class="track" id="track"></div>
+    </div>
+  </section>
+
+  <section class="dept-page" id="deptPage" aria-hidden="true">
+    <button class="dept-page__close" id="deptClose" type="button" aria-label="Close department page"><span>×</span></button>
+    <div class="dept-page__index" id="deptIndex">01 / 08</div>
+    <div class="dept-page__content">
+      <h2 id="deptPageTitle"></h2>
+      <p class="dept-page__lead" id="deptPageLead"></p>
+      <div class="dept-page__body" id="deptPageBody"></div>
+    </div>
+    <div class="dept-page__mark" aria-hidden="true">P</div>
+  </section>
+
+  <section class="sec contact" id="contact">
+    <h2 class="contact__title" id="contactTitle">CONTACT US</h2>
+    <div class="contact__text">
+      <p>Have a research idea, want to join a department, or looking to collaborate with The Prometheus Effort? Reach out to us.</p>
+      <p>General inquiries: <a class="contact-link" role="button" tabindex="0" data-contact-url="mailto:">{email}</a><br>
+      Join us : <a class="contact-link" role="button" tabindex="0" data-contact-url="https://forms.gle/LLuBZVZkre9Sujkk9">{application form}</a><br>
+      Follow us : <a class="contact-link" role="button" tabindex="0" data-contact-url="https://linktr.ee/theprometheuseffort">{social handles}</a></p>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
